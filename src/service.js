@@ -19,7 +19,7 @@ axios.interceptors.response.use(
 const TaskService = {
   getTasks: async () => {
     try {
-      const result = await axios.get(`${apiUrl}/tasks`);
+      const result = await axios.get(`/tasks`);
       console.log("result", result);
       return result.data;
     } catch (error) {
