@@ -5,31 +5,31 @@ function App() {
   const [newTodo, setNewTodo] = useState("");
   const [todos, setTodos] = useState([]);
 
-  async function getTodos() {
-    const todos = await service.getTasks();
-    console.log("todos", todos);
-    setTodos(todos);
-  }
+  // async function getTodos() {
+  //   const todos = await service.getTasks();
+  //   console.log("todos", todos);
+  //   setTodos(todos);
+  // }
 
   async function createTodo(e) {
     e.preventDefault();
     await service.addTask(newTodo);
     setNewTodo("");//clear input
-    await getTodos();//refresh tasks list (in order to see the new one)
+    // await getTodos();//refresh tasks list (in order to see the new one)
   }
 
   async function updateCompleted(todo, isComplete) {
     await service.setCompleted(todo.id, isComplete);
-    await getTodos();//refresh tasks list (in order to see the updated one)
+    // await getTodos();//refresh tasks list (in order to see the updated one)
   }
 
   async function deleteTodo(id) {
     await service.deleteTask(id);
-    await getTodos();//refresh tasks list
+    // await getTodos();//refresh tasks list
   }
 
   useEffect(() => {
-    getTodos();
+    // getTodos();
   }, []);
 
   return (
