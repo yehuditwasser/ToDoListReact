@@ -1,8 +1,8 @@
 import axios from 'axios';
 
 // Setting the API address as default with the correct port
-const apiUrl = process.env.REACT_APP_API;
-
+axios.defaults.baseURL = process.env.REACT_APP_API;
+const apiUrl = process.env.REACT_APP_API
 // Added an interceptor that catches the errors in the response and writes to the log
 axios.interceptors.response.use(
   function (response) {
@@ -19,8 +19,7 @@ const TaskService = {
   getTasks: async () => {
     try {
       const result = await axios.get(`${apiUrl}/tasks`);
-      console.log("result", result.data);
-
+      console.log("result", result);
       return result.data;
     } catch (error) {
       console.error('Error fetching tasks:', error);
