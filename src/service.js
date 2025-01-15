@@ -16,7 +16,7 @@ axios.interceptors.response.use(
   }
 );
 
-const TaskService = {
+export default {
   getTasks: async () => {
     try {
       const result = await axios.get(`/tasks`);
@@ -58,5 +58,5 @@ const TaskService = {
     }
   },
 };
-
-export default TaskService;
+// 
+// export default TaskService;
