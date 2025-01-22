@@ -17,16 +17,16 @@ axios.interceptors.response.use(
 );
 
 export default {
-  // getTasks: async () => {
-  //   try {
-  //     const result = await axios.get(`/tasks`);
-  //     console.log("result", result);
-  //     return result.data;
-  //   } catch (error) {
-  //     console.error('Error fetching tasks:', error);
-  //     throw error;
-  //   }
-  // },
+  getTasks: async () => {
+    try {
+      const result = await axios.get(`/tasks`);
+      console.log("result", result);
+      return result.data;
+    } catch (error) {
+      console.error('Error fetching tasks:', error);
+      throw error;
+    }
+  },
 
   addTask: async (name) => {
     try {
